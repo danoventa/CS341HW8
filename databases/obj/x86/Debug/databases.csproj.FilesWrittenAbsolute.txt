@@ -1,0 +1,11 @@
+/Users/Noventa/Projects/databases/databases/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/Noventa/Projects/databases/databases/obj/x86/Debug/.NETFramework,Version=v4.0,Profile=Client.AssemblyAttribute.cs
+/Users/Noventa/Projects/databases/databases/bin/Debug/databases.exe.mdb
+/Users/Noventa/Projects/databases/databases/bin/Debug/databases.exe
+/Users/Noventa/Projects/databases/databases/obj/x86/Debug/databases.exe
+/Users/Noventa/Projects/databases/databases/obj/x86/Debug/databases.exe.mdb
+/Users/Noventa/Desktop/Dropbox/Curr_Sem/cs341/CS341HW8/databases/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/Noventa/Desktop/Dropbox/Curr_Sem/cs341/CS341HW8/databases/bin/Debug/databases.exe.mdb
+/Users/Noventa/Desktop/Dropbox/Curr_Sem/cs341/CS341HW8/databases/bin/Debug/databases.exe
+/Users/Noventa/Desktop/Dropbox/Curr_Sem/cs341/CS341HW8/databases/obj/x86/Debug/databases.exe
+/Users/Noventa/Desktop/Dropbox/Curr_Sem/cs341/CS341HW8/databases/obj/x86/Debug/databases.exe.mdb
