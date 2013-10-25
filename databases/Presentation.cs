@@ -1,64 +1,22 @@
 using System;
-using System.Data;
-using Mono.Data;
-using Mono.Data.Sqlite;
 
 namespace databases
 {
-	class MainClass
+	public class Presentation
 	{
-		public static void Main (string[] args)
+		public Presentation ()
 		{
+			BisinessLayer bt = new BusinessLayer ();
+			List<Int64> trolllist =
+			 
 
+			foreach()
+			{
+				Console.WriteLine("Output");
 
-			string connectionInfo = "Data Source=Netflix.sqlite";
-			SqliteConnection db = new SqliteConnection(connectionInfo);
-			db.Open ();
-
-			Console.Write ("Please enter a movieID: ");
-			string input = Console.ReadLine();
-			int movieid = int.Parse(input);
-
-			SqliteCommand cmd = new SqliteCommand(db); 
-			cmd.CommandText = "SELECT MovieName FROM Movies WHERE MovieID = " + movieid + ";" ;
-			object result = cmd.ExecuteScalar();
-			Console.WriteLine (result);
-
-			/*
-			var query = from m in db.Movies where m.MovieID <= ID 
-			orderby m.MovieName select new {ID = m.MovieID, Name = m.MovieName };
-			*/
-
-			//SetupDB;// prob LINQ
-			//string input2 = Console.ReadLine();
-			// int ID = int.Parse(input);
-			// var query = from m in db.Movies where m.MovieID == ID select m.MovieName;//need LINQ?
-			// foreach(var name in query) Console.WriteLine(name);
-
-			/*
-			Console.Write ("Please enter a movieID: ");
-			string input2 = Console.ReadLine();
-			int movieid2 = int.Parse(input2);
-
-			cmd.CommandText = @"SELECT AVG(Rating) FROM Reviews
-			INNER JOIN Movies ON Reviews.MovieID = Movies.MovieID WHERE Movies.MovieName = " + movieid2 + ";";
-			object result2 = cmd.ExecuteScalar();
-			
-			// just to play? 
-			// string sql = "CREATE TABLE [Movies] ([MovieID] INTEGER PRIMARY KEY, [Movie Name]
-			/*
-			*	SqliteCommand cmd = new SqliteCommand(db); 
-			*	cmd.CommandText = "CREATE TABLE [Movies] ([MovieID] INTEGER PRIMARY KEY,[MovieName] TEXT);" ;
-			*	cmd.ExecuteNonQuery();
-			*	cmd.CommandText = @"INSERT INTO Movies(MovieID, MovieName) Values(1, 'When Harry Met Salley');";
-			*/
-
-
-			//Console.WriteLine (result2);
-			db.Close ();
-
-
-
+			}
+			return trolllist; // << user list
 		}
 	}
 }
+
