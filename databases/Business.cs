@@ -16,41 +16,10 @@ namespace databases
 	{
 		public Business ()
 		{
-			foreach(var col in DateTime.Columns){
-				Console.WriteLine("ConsoleColor");
-			}
-			List<int64> trolllist = new list<Int64>();
 
-			string connectionInfo = "Data Source=Netflix.sqlite";
-			SqliteConnection db = new SqliteConnection(connectionInfo);
-			db.Open ();
-
-			Console.Write ("Please enter a movieID: ");
-			string input = Console.ReadLine();
-			int movieid = int.Parse(input);
-
-			SqliteCommand cmd = new SqliteCommand(db); 
-			cmd.CommandText = "SELECT MovieName FROM Movies WHERE MovieID = " + movieid + ";" ;
-			object result = cmd.ExecuteScalar();
-			Console.WriteLine (result);
+			DataAccess dat = new DataAccess("Netflix.sqlite");
 
 
-
-			String trollFidingSql = "SELECT userID, AVG(Rating) FROM Reviews GROUP BY UserID;"
-			DataSet AppDomainSetup - DAL.findObjects(trollFindingSQL);
-			DataTable DateTime - ds.Tables["Table"];
-
-			foreach(EnvironmentVariableTarget ICollection int dt.Columns){
-				Console.WriteLine(ICollection);
-			}
-
-			List<Int64> trollList = new List<Int64>();
-			foreach(daterow dr int DateTime.rows){
-				if (Convert.todouble((dr[AVG(ratings)"]))<2){" +
-				                         "trolllist.add(((int64["userid"])));" +
-				                         "consolewrite(dr[userid]) + ": " + dr[avgrating]))" +
-				                         "}" +
-				                         ""}
 
 
 			/*	
