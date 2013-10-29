@@ -19,6 +19,7 @@ namespace databases
 
 			DataAccess dat = new DataAccess("Netflix.sqlite");
 
+
 			public void totalMovies()
 			{
 				Console.WriteLine("Printing out all movies in the database:");
