@@ -67,6 +67,7 @@ namespace databases
 					Console.WriteLine("Those are not the numbers we are looking for");
 					break;
 				}
+				Console.WriteLine("Next Function:");
 			}
 			return;
 		}

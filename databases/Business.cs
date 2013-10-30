@@ -35,6 +35,7 @@ namespace databases
 		{
 			Console.WriteLine("Enter a movie name");
 			string movie = Console.ReadLine();
+			Console.WriteLine(movie);
 
 			Console.WriteLine(dat.getStuff("SELECT MovieID FROM Movies WHERE MovieName = " + movie ));
 		}
@@ -53,13 +54,17 @@ namespace databases
 
 		public void totalReviews()
 		{
-			Console.WriteLine("All Reviews");
+			Console.WriteLine("Total Number of Reviews");
+			Console.WriteLine(dat.getStuff("SELECT COUNT(*) FROM Reviews"));
+
 			/* return all reviews from the database */
 		}
 
 		public void averageRatings()
 		{
-			Console.WriteLine("Average ratings accross all reviews");
+			Console.WriteLine("Average ratings accross all reviews, give it a few seconds");
+			Console.WriteLine(dat.getStuff(@"SELECT AVG(Rating) FROM Reviews INNER JOIN Movies"));
+
 			/* send request to do all average ratings from database */
 		}
 
