@@ -4,9 +4,9 @@ namespace databases
 {
 	public class Presentation
 	{
-		public Presentation ()
+		public static void Main (string[] args)
 		{
-			Bisiness bt = new Business();
+			Business bt = new Business();
 
 			Console.WriteLine("Which function would you like to perform?");
 			Console.WriteLine("Enter 1 for total number of Movies.");
@@ -19,13 +19,16 @@ namespace databases
 			Console.WriteLine("Enter 8 get specific informaition on a user with user ID");
 			Console.WriteLine("Enter 9 to get top 10 users based on number of reviews submitted");
 			Console.WriteLine("Enter 10 to insert a new review into the database");
+			Console.WriteLine("Enter 11 to exit");
 
-			string input = Console.ReadLine();
-			int case = int.Parse(input);
+			bool testing = true;
 
-			switch (caseSwitch)
-			{
-				string input2;
+			while (testing){
+				string input = Console.ReadLine();
+				int caseSwitch = int.Parse(input);
+
+				switch (caseSwitch)
+				{
 				case 1:
 					bt.totalMovies();
 					break;
@@ -56,11 +59,16 @@ namespace databases
 				case 10:
 					bt.addReview();
 					break;
+				case 11:
+					testing = false;
+					Console.WriteLine("Exiting");
+					break;
 				default:
 					Console.WriteLine("Those are not the numbers we are looking for");
-				break;
+					break;
+				}
 			}
-			return 0;
+			return;
 		}
 	}
 }

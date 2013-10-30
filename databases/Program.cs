@@ -9,10 +9,8 @@ namespace databases
 	{
 		public static void Main (string[] args)
 		{
-			Presentation theProgram = new Presentation();
-			theProgram.Presentation();
 		
-			return 0;
+			return;
 		}
 	}
 }
