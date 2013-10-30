@@ -28,7 +28,7 @@ namespace databases
 
 			public void nameLookUp()
 			{
-				Console.WriteLine("Please insert Movie Name");
+				Console.WritLine("Enter a movie ID");
 				string movie = Console.ReadLine();
 
 				Console.WriteLine(movie + " has ID of:" /* + id */ );
@@ -37,9 +37,9 @@ namespace databases
 
 			public void IDLookUp()
 			{
-				Console.WriteLine("Please insert Movie ID");
-				string inID1 = Console.ReadLine();
-				int id1 = int.Parse(inID1);
+				Console.WritLine("Enter a movie name");
+				string movie = Console.ReadLine();
+				int id1 = int.Parse(movie);
 
 				Console.WriteLine("Movie with ID of " + id1 + " is: " /* + movie name */);
 			}
@@ -53,24 +53,26 @@ namespace databases
 			public void topTenMovies()
 			{
 				Console.WriteLine("Printing top ten movies ");
-
+				/* get top ten movies from data access */
 			}
 
 			public void totalReviews()
 			{
 				Console.WriteLine("All Reviews");
+				/* return all reviews from the database */
 			}
 
 			public void averageRatings()
 			{
 				Console.WriteLine("Average ratings accross all reviews");
+				/* send request to do all average ratings from database */
 			}
 
 			public void userInfo()
 			{
-				Console.WriteLine("Which user would you like to spy on?");
-				string inID2 = Console.ReadLine();
-				int id2 = int.Parse(inID2);
+				Console.WritLine("Enter a user ID");
+				string user = Console.ReadLine();
+				int id2 = int.Parse(user);
 
 				/* get user info */
 			}
@@ -78,11 +80,22 @@ namespace databases
 			public void topTenUsers()
 			{
 				Console.WriteLine ("Printing top ten users ");
+				/*send string to print top ten users to data acces */
 			}
 
 			public void addReview()
 			{
-				Console.WriteLine("Please insert your review ");
+				Console.WritLine("Enter a Movie name or id: ");
+				string movie = Console.ReadLine();
+				Console.WritLine("Enter a review for Movie " + movie + ".");
+				string review = Console.ReadLine();
+			
+				if (int.tryParse(movie, out movieID){
+					/* use movie ID to look up movie to review */
+				}
+				else{
+					/* use movie name to look up movie for review */
+				}
 				string review = Console.ReadLine();
 			}
 
