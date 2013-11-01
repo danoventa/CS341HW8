@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 // This was another class presented by Sean Deitz as a solution to the 
 // assignment. Will be keeping it, to see if it is needed for my solution. 
@@ -7,7 +10,7 @@ using System.Collections.Generic;
 
 namespace databases
 {
-	public class Movies
+	public class Movie
 	{
 		public bool valid;
 		public long ID;
@@ -17,7 +20,10 @@ namespace databases
 		public int minReview;
 		public int maxReview;
 
-		/*public Movie(long pID, string pmovieName, int pnumReviews, double pavgReview, int pminReview, int pmaxReview)
+		// need to use this function, or whatever, but cant yet. Need to somehow make it connect to the 
+		// business layer, where it will be used. 
+
+		public Movie(long pID, string pmovieName, int pnumReviews, double pavgReview, int pminReview, int pmaxReview)
 		{
 			ID = pID;
 			movieName = pmovieName;
@@ -25,7 +31,7 @@ namespace databases
 			avgReview = pavgReview;
 			minReview = pminReview;
 			maxReview = pmaxReview;
-		}*/
+		}
 	}
 }
 
