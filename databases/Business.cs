@@ -40,7 +40,6 @@ namespace databases
 		{
 			Console.WriteLine("Enter a movie name");
 			string movie = Console.ReadLine();
-			Console.WriteLine(movie);
 
 			Console.WriteLine(dat.getStuff("SELECT MovieID FROM Movies WHERE MovieName = " + "\"" + movie + "\""));
 		}

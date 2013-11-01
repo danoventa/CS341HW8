@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace databases
 {
@@ -39,7 +40,11 @@ namespace databases
 					bt.IDLookUp();
 					break;
 				case 4:
-					bt.convolutedFunction(2, "");
+					List<Movie> result = bt.convolutedFunction(3, "");
+					foreach(Movie m in result)
+					{
+						Console.WriteLine(m.ID + "\t{1:-50}" + "\t" + m.numReviews + "\t{0:n2}" + "\t" + m.minReview + "" + m.maxReview, m.avgReview, m.movieName);
+					}
 					break;
 				case 5:
 					bt.topTenMovies();
