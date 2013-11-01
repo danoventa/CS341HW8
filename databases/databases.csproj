@@ -41,6 +41,8 @@
     <Compile Include="Business.cs" />
     <Compile Include="DataAccess.cs" />
     <Compile Include="Presentation.cs" />
+    <Compile Include="Users.cs" />
+    <Compile Include="Movies.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

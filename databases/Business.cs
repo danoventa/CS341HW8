@@ -37,7 +37,7 @@ namespace databases
 			string movie = Console.ReadLine();
 			Console.WriteLine(movie);
 
-			Console.WriteLine(dat.getStuff("SELECT MovieID FROM Movies WHERE MovieName = " + movie ));
+			Console.WriteLine(dat.getStuff("SELECT MovieID FROM Movies WHERE MovieName = " + "\"" + movie + "\""));
 		}
 
 		public void convolutedFunction()
