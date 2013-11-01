@@ -8,7 +8,12 @@
 //
 
 using System.Collections.Generic;
+using System.Data;
 using System;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml;
 
 
 namespace databases
@@ -40,10 +45,40 @@ namespace databases
 			Console.WriteLine(dat.getStuff("SELECT MovieID FROM Movies WHERE MovieName = " + "\"" + movie + "\""));
 		}
 
-		public void convolutedFunction()
+		public List<Movie> convolutedFunction(int x, string val)
 		{
 			Console.WriteLine("This is where the magic happens");
-			/* magic */
+			DataSet result;
+			switch (x)
+			{
+				case 1:
+				int searchID = int.Parse(val);
+				result = dat.findObjects(@"SELECT Movies.MovieID, MovieName, Count(*) as revcount, AVG(Rating), Min(Rating), Max(Rating) 
+									  FROM Movies 
+									  INNER JOIN Reviews ON Movies.MovieID = Reviews.MovieID 
+									  WHERE Reviews.MovieID=" + searchID);
+				break;
+				case 2:
+				string searchName = "\"" + val + "\"";
+				result = dat.findObjects(@"SELECT Movies.MovieID, MovieName, Count(*) as revcount, AVG(Rating), Min(Rating), Max(Rating) 
+									  FROM Movies 
+									  INNER JOIN Reviews ON Movies.MovieID = Reviews.MovieID 
+									  WHERE MovieName=" + searchName);
+				break;
+				default:
+				result = dat.findObjects(@"SELECT Movies.MovieID, MovieName, Count(*) as revCount, AVG(Rating), MIN(Rating), MAX(Rating) 
+									  FROM Movies 
+									  INNER JOIN Reviews ON Movies.MovieID = Reviews.MovieID 
+									  GROUP BY Reviews.MovieID;");
+				break;
+			}
+
+			List<Movie> presentable = new List<Movie>();
+			foreach (DataRow row in result.Tables["TABLE"].Rows)
+			{
+				presentable.Add(new Movie(Convert.ToInt64(row["MovieID"]), Convert.ToString(row["MovieName"]), Convert.ToInt32(row["revCount"]), Convert.ToDouble(row["AVG(rating)"]), Convert.ToInt32(row["MIN(rating)"]), Convert.ToInt32(row["MAX(rating)"])));
+			}
+			return presentable;
 		}
 
 		public void topTenMovies()

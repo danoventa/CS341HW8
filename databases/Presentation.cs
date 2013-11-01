@@ -39,7 +39,7 @@ namespace databases
 					bt.IDLookUp();
 					break;
 				case 4:
-					bt.convolutedFunction();
+					bt.convolutedFunction(2, "");
 					break;
 				case 5:
 					bt.topTenMovies();

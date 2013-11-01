@@ -6,6 +6,12 @@
 // CS341, Fall 2013 
 // Homework 8 
 //
+// 
+// The findObjects funciton was taken from Sean Deitz homework solution. 
+// trying to see how it would work with my code. Needed a few more references
+// with the mono framework vs. Visual studio. 
+
+
 using System.Data;
 using System.Collections.Generic;
 using Mono.Data.Sqlite;
@@ -19,6 +25,7 @@ namespace databases
 		public string connectionInfo = "Data Source = Netflix.sqlite";
 		public SqliteConnection db;
 		public SqliteCommand cmd;
+		public SqliteDataAdapter adapter; //from Sean Deitz Code
 
 		public object getStuff(string s)
 		{ 
@@ -31,6 +38,14 @@ namespace databases
 
 			db.Close();
 			return result;
+		}
+
+		public DataSet findObjects(String command) // from Sean Deitz Code
+		{
+			DataSet ds = new DataSet(); // Requires using System.Data
+			cmd.CommandText = command;
+			adapter.Fill(ds);
+			return ds;
 		}
 	}
 }
