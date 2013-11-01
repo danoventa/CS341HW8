@@ -16,20 +16,16 @@ namespace databases
 {
 	public class DataAccess
 	{
-		public DataAccess (string s)
-		{
-			string connectionInfo = "Data Source = " + s;
-			SqliteConnection db = new SqliteConnection(connectionInfo);
-			db.Open();
-		}
+		public string connectionInfo = "Data Source = Netflix.sqlite";
+		public SqliteConnection db;
+		public SqliteCommand cmd;
 
 		public object getStuff(string s)
 		{ 
-			string connectionInfo = "Data Source = Netflix.sqlite";
-			SqliteConnection db = new SqliteConnection(connectionInfo);
+			db = new SqliteConnection(connectionInfo);
 			db.Open();
 
-			SqliteCommand cmd = new SqliteCommand(db);
+			cmd = new SqliteCommand(db);
 			cmd.CommandText = s;
 			object result = cmd.ExecuteScalar();
 

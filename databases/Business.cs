@@ -15,13 +15,13 @@ namespace databases
 {
 	public class Business
 	{
-		DataAccess dat = new DataAccess("Netflix.sqlite");
+		DataAccess dat = new DataAccess();
 
 		public void totalMovies()
 		{
 
 			Console.WriteLine("Printing out total number of movies in the database:");
-			Console.WriteLine(dat.getStuff("SELECT COUNT(*) FROM Movies"));
+			Console.WriteLine(dat.getStuff("SELECT COUNT(*) FROM Movies GROUP BY MovieName" + ";"));
 		}
 
 		public void nameLookUp()
